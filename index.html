@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopUpKu — Beranda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="mobile-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+    <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+            <div><h2>TopUpKu</h2><span>Dokumentasi v3.0</span></div>
+        </div>
+        <div class="sidebar-search"><i class="fas fa-search"></i><input type="text" placeholder="Cari dokumentasi..." id="searchInput" onkeyup="filterNav()"></div>
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <div class="nav-section-title">Memulai</div>
+                <a href="index.html" class="nav-link" onclick="setActive(this)"><i class="fas fa-home"></i> Beranda</a>
+                <a href="index.html#introduction" class="nav-link" onclick="setActive(this)"><i class="fas fa-book-open"></i> Pengenalan <span class="nav-badge hot">Populer</span></a>
+                <a href="index.html#quickstart" class="nav-link" onclick="setActive(this)"><i class="fas fa-rocket"></i> Quick Start</a>
+            </div>
+            <div class="nav-section">
+                <div class="nav-section-title">Top Up Game</div>
+                <a href="games.html" class="nav-link" onclick="setActive(this)"><i class="fas fa-gamepad"></i> Daftar Game</a>
+                <a href="games.html#topup-process" class="nav-link" onclick="setActive(this)"><i class="fas fa-credit-card"></i> Proses Top Up</a>
+                <a href="games.html#payment-methods" class="nav-link" onclick="setActive(this)"><i class="fas fa-wallet"></i> Metode Pembayaran</a>
+            </div>
+            <div class="nav-section">
+                <div class="nav-section-title">Aplikasi Premium</div>
+                <a href="premium.html" class="nav-link" onclick="setActive(this)"><i class="fas fa-crown"></i> Aplikasi Premium <span class="nav-badge new">Baru</span></a>
+                <a href="premium.html#subscription" class="nav-link" onclick="setActive(this)"><i class="fas fa-sync-alt"></i> Langganan</a>
+            </div>
+            <div class="nav-section">
+                <div class="nav-section-title">API Reference</div>
+                <a href="api.html" class="nav-link" onclick="setActive(this)"><i class="fas fa-key"></i> Autentikasi</a>
+                <a href="api.html#api-endpoints" class="nav-link" onclick="setActive(this)"><i class="fas fa-plug"></i> Endpoints</a>
+                <a href="api.html#api-response" class="nav-link" onclick="setActive(this)"><i class="fas fa-code"></i> Response Format</a>
+            </div>
+            <div class="nav-section">
+                <div class="nav-section-title">Lainnya</div>
+                <a href="support.html" class="nav-link" onclick="setActive(this)"><i class="fas fa-question-circle"></i> FAQ</a>
+                <a href="support.html#support" class="nav-link" onclick="setActive(this)"><i class="fas fa-headset"></i> Dukungan</a>
+            </div>
+        </nav>
+        <div class="sidebar-footer"><div class="version"><span>Versi Dokumentasi</span><span class="version-badge">v3.0.0</span></div></div>
+    </aside>
+
+    <main class="main">
+        <header class="header">
+            <div class="header-left">
+                <div class="breadcrumb"><a href="index.html">Docs</a><span class="separator"><i class="fas fa-chevron-right"></i></span><span class="current" id="breadcrumbCurrent">Beranda</span></div>
+            </div>
+            <div class="header-right">
+                <a href="#" class="header-btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#" class="header-btn btn-primary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+        </header>
+
+        <div class="content">
+            <section class="hero" id="hero">
+                <div class="hero-badge animate-in"><i class="fas fa-sparkles"></i> Dokumentasi Terbaru — v3.0</div>
+                <h1 class="animate-in delay-1">Top Up Game &<br>Aplikasi Premium</h1>
+                <p class="animate-in delay-2">Platform top up game dan langganan aplikasi premium terlengkap, tercepat, dan terpercaya di Indonesia. Dokumentasi lengkap untuk developer dan pengguna.</p>
+                <div class="hero-actions animate-in delay-3">
+                    <a href="index.html#quickstart" class="header-btn btn-primary"><i class="fas fa-rocket"></i> Mulai Sekarang</a>
+                    <a href="api.html" class="header-btn btn-outline"><i class="fas fa-plug"></i> API Reference</a>
+                </div>
+            </section>
+
+            <div class="stats-grid">
+                <div class="stat-card animate-in delay-1"><div class="stat-icon"><i class="fas fa-gamepad"></i></div><div class="stat-value">150+</div><div class="stat-label">Game Tersedia</div></div>
+                <div class="stat-card animate-in delay-2"><div class="stat-icon"><i class="fas fa-bolt"></i></div><div class="stat-value">&lt;30s</div><div class="stat-label">Proses Cepat</div></div>
+                <div class="stat-card animate-in delay-3"><div class="stat-icon"><i class="fas fa-users"></i></div><div class="stat-value">324+</div><div class="stat-label">Pengguna Aktif</div></div>
+                <div class="stat-card animate-in delay-4"><div class="stat-icon"><i class="fas fa-shield-alt"></i></div><div class="stat-value">96.3%</div><div class="stat-label">Uptime Server</div></div>
+            </div>
+
+            <div class="divider"></div>
+
+            <section class="doc-section" id="introduction">
+                <div class="section-header"><h2><i class="fas fa-book-open"></i> Pengenalan</h2><p>Apa itu TopUpKu dan bagaimana platform kami bekerja</p></div>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon" style="background: rgba(108,92,231,0.15); color: var(--primary-light);"><i class="fas fa-gamepad"></i></div>
+                        <h3>Top Up Game</h3><p>Top up diamond, UC, coin, dan mata uang in-game lainnya untuk 150+ game populer dengan proses instan dan harga termurah.</p>
+                        <a href="games.html" class="card-link">Lihat Daftar Game <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon" style="background: rgba(253,121,168,0.15); color: var(--accent);"><i class="fas fa-crown"></i></div>
+                        <h3>Aplikasi Premium</h3><p>Langganan aplikasi premium seperti Spotify, Netflix, YouTube Premium, Canva Pro, dan lainnya dengan harga terjangkau.</p>
+                        <a href="premium.html" class="card-link">Lihat Aplikasi <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon" style="background: rgba(0,206,201,0.15); color: var(--secondary);"><i class="fas fa-code"></i></div>
+                        <h3>API Integration</h3><p>Integrasikan layanan kami ke website atau aplikasi Anda melalui REST API yang mudah digunakan dan terdokumentasi lengkap.</p>
+                        <a href="api.html" class="card-link">API Docs <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon" style="background: rgba(0,184,148,0.15); color: var(--success);"><i class="fas fa-headset"></i></div>
+                        <h3>Support 24/7</h3><p>Tim support kami siap membantu Anda 24 jam sehari, 7 hari seminggu melalui live chat, email, dan WhatsApp.</p>
+                        <a href="support.html" class="card-link">Hubungi Kami <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </section>
+
+            <div class="divider"></div>
+
+            <section class="doc-section" id="quickstart">
+                <div class="section-header"><h2><i class="fas fa-rocket"></i> Quick Start</h2><p>Panduan cepat untuk mulai menggunakan TopUpKu dalam 5 menit</p></div>
+                <div class="steps">
+                    <div class="step"><div class="step-number">1</div><div class="step-content"><h4>Daftar Akun</h4><p>Buat akun developer di <code>dashboard.topupku.id</code> dan verifikasi email Anda. Proses pendaftaran gratis dan hanya membutuhkan waktu 1 menit.</p></div></div>
+                    <div class="step"><div class="step-number">2</div><div class="step-content"><h4>Buat API Key</h4><p>Masuk ke dashboard dan buat API Key baru di menu <code>Settings > API Keys</code>. Simpan key Anda dengan aman dan jangan bagikan ke siapapun.</p></div></div>
+                    <div class="step"><div class="step-number">3</div><div class="step-content"><h4>Integrasikan API</h4><p>Gunakan API Key untuk melakukan autentikasi dan mulai membuat permintaan ke endpoint kami. Lihat contoh kode di bawah ini.</p></div></div>
+                    <div class="step"><div class="step-number">4</div><div class="step-content"><h4>Test & Deploy</h4><p>Gunakan sandbox environment untuk testing. Setelah siap, switch ke production mode dan mulai melayani pelanggan Anda.</p></div></div>
+                </div>
+                <div class="code-block">
+                    <div class="code-header"><span class="code-lang"><i class="fab fa-js"></i> JavaScript — Quick Start</span><button class="code-copy" onclick="copyCode(this)"><i class="far fa-copy"></i> Copy</button></div>
+                    <div class="code-body">
+<pre><span class="keyword">const</span> TopUpKu = <span class="function">require</span>(<span class="string">'@topupku/sdk'</span>);
+<span class="comment">// Inisialisasi client</span>
+<span class="keyword">const</span> client = <span class="keyword">new</span> <span class="function">TopUpKu</span>({
+  <span class="property">apiKey</span>: <span class="string">'your_api_key_here'</span>,
+  <span class="property">environment</span>: <span class="string">'production'</span> <span class="comment">// atau 'sandbox'</span>
+});
+<span class="comment">// Cek saldo</span>
+<span class="keyword">const</span> balance = <span class="keyword">await</span> client.<span class="function">getBalance</span>();
+console.<span class="function">log</span>(<span class="string">`Saldo: Rp </span>${balance.<span class="property">amount</span>}<span class="string">`</span>);</pre>
+                    </div>
+                </div>
+                <div class="callout info"><i class="fas fa-info-circle"></i><div class="callout-content"><h4>Info Sandbox</h4><p>Gunakan environment <code>sandbox</code> untuk testing. Semua transaksi di sandbox menggunakan data dummy dan tidak memerlukan pembayaran sungguhan.</p></div></div>
+            </section>
+        </div>
+
+        <footer class="doc-footer">
+            <p>© 2026 TopUpKu. All rights reserved. Luthzz dev</p>
+            <div class="footer-links">
+                <a href="#"><i class="fab fa-github"></i> GitHub</a><a href="#"><i class="fab fa-twitter"></i> Twitter</a><a href="#"><i class="fab fa-discord"></i> Discord</a><a href="#"><i class="fas fa-file-alt"></i> Changelog</a>
+            </div>
+        </footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

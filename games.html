@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopUpKu — Game & Pembayaran</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="mobile-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+    <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+    <!-- SIDEBAR SAMA PERSIS (Copy dari index.html bagian <aside>) -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand"><div class="logo-icon"><i class="fas fa-bolt"></i></div><div><h2>TopUpKu</h2><span>Dokumentasi v3.0</span></div></div>
+        <div class="sidebar-search"><i class="fas fa-search"></i><input type="text" placeholder="Cari dokumentasi..." id="searchInput" onkeyup="filterNav()"></div>
+        <nav class="sidebar-nav">
+            <div class="nav-section"><div class="nav-section-title">Memulai</div><a href="index.html" class="nav-link" onclick="setActive(this)"><i class="fas fa-home"></i> Beranda</a><a href="index.html#introduction" class="nav-link" onclick="setActive(this)"><i class="fas fa-book-open"></i> Pengenalan <span class="nav-badge hot">Populer</span></a><a href="index.html#quickstart" class="nav-link" onclick="setActive(this)"><i class="fas fa-rocket"></i> Quick Start</a></div>
+            <div class="nav-section"><div class="nav-section-title">Top Up Game</div><a href="games.html" class="nav-link" onclick="setActive(this)"><i class="fas fa-gamepad"></i> Daftar Game</a><a href="games.html#topup-process" class="nav-link" onclick="setActive(this)"><i class="fas fa-credit-card"></i> Proses Top Up</a><a href="games.html#payment-methods" class="nav-link" onclick="setActive(this)"><i class="fas fa-wallet"></i> Metode Pembayaran</a></div>
+            <div class="nav-section"><div class="nav-section-title">Aplikasi Premium</div><a href="premium.html" class="nav-link" onclick="setActive(this)"><i class="fas fa-crown"></i> Aplikasi Premium <span class="nav-badge new">Baru</span></a><a href="premium.html#subscription" class="nav-link" onclick="setActive(this)"><i class="fas fa-sync-alt"></i> Langganan</a></div>
+            <div class="nav-section"><div class="nav-section-title">API Reference</div><a href="api.html" class="nav-link" onclick="setActive(this)"><i class="fas fa-key"></i> Autentikasi</a><a href="api.html#api-endpoints" class="nav-link" onclick="setActive(this)"><i class="fas fa-plug"></i> Endpoints</a><a href="api.html#api-response" class="nav-link" onclick="setActive(this)"><i class="fas fa-code"></i> Response Format</a></div>
+            <div class="nav-section"><div class="nav-section-title">Lainnya</div><a href="support.html" class="nav-link" onclick="setActive(this)"><i class="fas fa-question-circle"></i> FAQ</a><a href="support.html#support" class="nav-link" onclick="setActive(this)"><i class="fas fa-headset"></i> Dukungan</a></div>
+        </nav>
+        <div class="sidebar-footer"><div class="version"><span>Versi Dokumentasi</span><span class="version-badge">v3.0.0</span></div></div>
+    </aside>
+
+    <main class="main">
+        <header class="header">
+            <div class="header-left"><div class="breadcrumb"><a href="index.html">Docs</a><span class="separator"><i class="fas fa-chevron-right"></i></span><span class="current" id="breadcrumbCurrent">Top Up Game</span></div></div>
+            <div class="header-right"><a href="#" class="header-btn btn-outline"><i class="fab fa-github"></i> GitHub</a><a href="#" class="header-btn btn-primary"><i class="fas fa-external-link-alt"></i> Live Demo</a></div>
+        </header>
+        <div class="content">
+            <section class="doc-section" id="games">
+                <div class="section-header"><h2><i class="fas fa-gamepad"></i> Daftar Game</h2><p>Game-game populer yang tersedia untuk top up di platform kami</p></div>
+                <div class="game-grid">
+                    <div class="game-card"><div class="game-icon-wrapper"><img src="https://i.ibb.co.com/wFgHkb4t/c9137e7a2879f90e22df9fc5cd3bf85f.jpg" alt="ML"></div><h4>Mobile Legends</h4><span class="game-category">MOBA — Moonton</span><span class="game-status active">Tersedia</span></div>
+                    <div class="game-card"><div class="game-icon-wrapper"><img src="https://i.ibb.co/wNsQnK4f/free-fire-logo-png-seeklogo-354358.png" alt="FF"></div><h4>Free Fire</h4><span class="game-category">Battle Royale — Garena</span><span class="game-status active">Tersedia</span></div>
+                    <div class="game-card"><div class="game-icon-wrapper"><img src="https://i.ibb.co.com/Lzpq3g96/images.jpg" alt="PUBG"></div><h4>PUBG Mobile</h4><span class="game-category">Battle Royale — Tencent</span><span class="game-status active">Tersedia</span></div>
+                    <div class="game-card"><div class="game-icon-wrapper"><img src="https://i.ibb.co.com/8D2F7CG3/genshin-impact4958.jpg" alt="GI"></div><h4>Genshin Impact</h4><span class="game-category">RPG — HoYoverse</span><span class="game-status active">Tersedia</span></div>
+                    <div class="game-card"><div class="game-icon-wrapper"><img src="https://i.ibb.co.com/hRn4XtG4/images.png" alt="VAL"></div><h4>Valorant</h4><span class="game-category">FPS — Riot Games</span><span class="game-status active">Tersedia</span></div>
+                    <div class="game-card"><div class="game-icon-wrapper"><img src="https://i.ibb.co.com/fVg32mMR/7e896649d0a9e3d1c3936eff8b945405.png" alt="HSR"></div><h4>Honkai: Star Rail</h4><span class="game-category">RPG — HoYoverse</span><span class="game-status active">Tersedia</span></div>
+                </div>
+                <div class="callout success" style="margin-top: 24px;"><i class="fas fa-check-circle"></i><div class="callout-content"><h4>150+ Game Tersedia</h4><p>Kami terus menambahkan game baru setiap minggu. Cek halaman API <code>GET /games</code> untuk mendapatkan daftar lengkap game yang tersedia secara real-time.</p></div></div>
+            </section>
+            <div class="divider"></div>
+            <section class="doc-section" id="topup-process">
+                <div class="section-header"><h2><i class="fas fa-credit-card"></i> Proses Top Up</h2><p>Alur proses top up dari awal hingga selesai</p></div>
+                <div class="steps">
+                    <div class="step"><div class="step-number">1</div><div class="step-content"><h4>Pilih Game & Item</h4><p>Pilih game yang ingin di-top up, lalu pilih nominal item (diamond, UC, dll) yang diinginkan.</p></div></div>
+                    <div class="step"><div class="step-number">2</div><div class="step-content"><h4>Masukkan User ID</h4><p>Masukkan User ID dan Zone ID (jika diperlukan) dari akun game Anda. Pastikan data yang dimasukkan benar.</p></div></div>
+                    <div class="step"><div class="step-number">3</div><div class="step-content"><h4>Pilih Pembayaran</h4><p>Pilih metode pembayaran yang tersedia: QRIS, Transfer Bank, E-Wallet, atau Virtual Account.</p></div></div>
+                    <div class="step"><div class="step-number">4</div><div class="step-content"><h4>Bayar & Konfirmasi</h4><p>Lakukan pembayaran sesuai instruksi. Setelah pembayaran dikonfirmasi, item akan otomatis masuk ke akun game Anda.</p></div></div>
+                    <div class="step"><div class="step-number">5</div><div class="step-content"><h4>Selesai! 🎉</h4><p>Item berhasil ditambahkan ke akun game. Anda akan menerima notifikasi via email dan webhook (jika menggunakan API).</p></div></div>
+                </div>
+                <div class="callout warning"><i class="fas fa-exclamation-triangle"></i><div class="callout-content"><h4>Penting: Verifikasi User ID</h4><p>Selalu verifikasi User ID sebelum melakukan pembayaran. Kami tidak bertanggung jawab atas kesalahan pengiriman akibat User ID yang salah.</p></div></div>
+            </section>
+            <div class="divider"></div>
+            <section class="doc-section" id="payment-methods">
+                <div class="section-header"><h2><i class="fas fa-wallet"></i> Metode Pembayaran</h2><p>Berbagai metode pembayaran yang kami dukung</p></div>
+                <div class="table-wrapper">
+                    <table><thead><tr><th>Metode</th><th>Provider</th><th>Estimasi</th><th>Biaya Admin</th></tr></thead><tbody>
+                        <tr><td><strong>QRIS</strong></td><td>Semua E-Wallet</td><td>Instant</td><td><code>Rp 0</code></td></tr>
+                        <tr><td><strong>Virtual Account</strong></td><td>BCA, BNI, BRI, Mandiri</td><td>Instant</td><td><code>Rp 1.500</code></td></tr>
+                        <tr><td><strong>E-Wallet</strong></td><td>GoPay, OVO, Dana, ShopeePay</td><td>Instant</td><td><code>Rp 0</code></td></tr>
+                        <tr><td><strong>Transfer Bank</strong></td><td>Semua Bank</td><td>1-5 menit</td><td><code>Rp 0</code></td></tr>
+                        <tr><td><strong>Alfamart/Indomaret</strong></td><td>Retail Store</td><td>5-15 menit</td><td><code>Rp 2.500</code></td></tr>
+                        <tr><td><strong>Pulsa</strong></td><td>Telkomsel, XL, Indosat</td><td>Instant</td><td><code>10%</code></td></tr>
+                    </tbody></table>
+                </div>
+            </section>
+        </div>
+        <footer class="doc-footer"><p>� 2026 TopUpKu. All rights reserved. Luthzz dev</p><div class="footer-links"><a href="#"><i class="fab fa-github"></i> GitHub</a><a href="#"><i class="fab fa-twitter"></i> Twitter</a><a href="#"><i class="fab fa-discord"></i> Discord</a><a href="#"><i class="fas fa-file-alt"></i> Changelog</a></div></footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopUpKu — FAQ & Dukungan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="mobile-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+    <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+            <div><h2>TopUpKu</h2><span>Dokumentasi v3.0</span></div>
+        </div>
+        <div class="sidebar-search">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Cari dokumentasi..." id="searchInput" onkeyup="filterNav()">
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <div class="nav-section-title">Memulai</div>
+                <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Beranda</a>
+                <a href="index.html#introduction" class="nav-link"><i class="fas fa-book-open"></i> Pengenalan <span class="nav-badge hot">Populer</span></a>
+                <a href="index.html#quickstart" class="nav-link"><i class="fas fa-rocket"></i> Quick Start</a>
+            </div>
+            <div class="nav-section">
+                <div class="nav-section-title">Top Up Game</div>
+                <a href="index.html#games" class="nav-link"><i class="fas fa-gamepad"></i> Daftar Game</a>
+                <a href="index.html#topup-process" class="nav-link"><i class="fas fa-credit-card"></i> Proses Top Up</a>
+                <a href="index.html#payment-methods" class="nav-link"><i class="fas fa-wallet"></i> Metode Pembayaran</a>
+            </div>
+            <div class="nav-section">
+                <div class="nav-section-title">Aplikasi Premium</div>
+                <a href="premium.html" class="nav-link"><i class="fas fa-crown"></i> Aplikasi Premium <span class="nav-badge new">Baru</span></a>
+                <a href="premium.html#subscription" class="nav-link"><i class="fas fa-sync-alt"></i> Langganan</a>
+            </div>
+            <div class="nav-section">
+                <div class="nav-section-title">API Reference</div>
+                <a href="api.html" class="nav-link"><i class="fas fa-key"></i> Autentikasi</a>
+                <a href="api.html#api-endpoints" class="nav-link"><i class="fas fa-plug"></i> Endpoints</a>
+                <a href="api.html#api-response" class="nav-link"><i class="fas fa-code"></i> Response Format</a>
+            </div>
+            <div class="nav-section">
+                <div class="nav-section-title">Lainnya</div>
+                <a href="support.html" class="nav-link active"><i class="fas fa-question-circle"></i> FAQ</a>
+                <a href="support.html#support" class="nav-link"><i class="fas fa-headset"></i> Dukungan</a>
+            </div>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="version">
+                <span>Versi Dokumentasi</span>
+                <span class="version-badge">v3.0.0</span>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main">
+        <header class="header">
+            <div class="header-left">
+                <div class="breadcrumb">
+                    <a href="index.html">Docs</a>
+                    <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                    <span class="current">FAQ & Dukungan</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <a href="#" class="header-btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#" class="header-btn btn-primary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+        </header>
+
+        <div class="content">
+            <section class="doc-section" id="faq">
+                <div class="section-header">
+                    <h2><i class="fas fa-question-circle"></i> FAQ</h2>
+                    <p>Pertanyaan yang sering ditanyakan</p>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-question">
+                            <span>Berapa lama proses top up?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Proses top up biasanya membutuhkan waktu kurang dari 30 detik setelah pembayaran dikonfirmasi. Untuk beberapa game, proses bisa memakan waktu hingga 5 menit tergantung server game.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-question">
+                            <span>Apakah aman melakukan top up di TopUpKu?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Ya, sangat aman. Kami menggunakan sistem pembayaran yang terenkripsi dan bekerja sama langsung dengan publisher game. Semua transaksi diproses secara legal dan aman.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-question">
+                            <span>Bagaimana jika top up tidak berhasil?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Jika top up tidak berhasil, dana Anda akan otomatis dikembalikan (refund) dalam 1x24 jam. Anda juga bisa menghubungi tim support kami untuk bantuan lebih cepat.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-question">
+                            <span>Apakah bisa menjadi reseller?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Tentu! Kami menyediakan program reseller dengan harga khusus. Cukup daftar melalui dashboard, buat API Key, dan mulai berjualan. Semakin banyak transaksi, semakin besar diskon yang Anda dapatkan.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-question">
+                            <span>Aplikasi premium apa saja yang tersedia?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Kami menyediakan langganan untuk Spotify Premium, Netflix, YouTube Premium, Canva Pro, Google One, Disney+ Hotstar, dan masih banyak lagi. Cek bagian <strong>Aplikasi Premium</strong> untuk daftar lengkap.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="divider"></div>
+
+            <section class="doc-section" id="support">
+                <div class="section-header">
+                    <h2><i class="fas fa-headset"></i> Dukungan</h2>
+                    <p>Butuh bantuan? Tim kami siap membantu Anda</p>
+                </div>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon" style="background: rgba(37, 211, 102, 0.15); color: #25D366;">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3>WhatsApp</h3>
+                        <p>Chat langsung dengan tim support kami melalui WhatsApp. Respon cepat dalam 5 menit.</p>
+                        <a href="https://wa.me/6285819544329" class="card-link">+62 858-1954-4329 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon" style="background: rgba(116, 185, 255, 0.15); color: var(--info);">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>Kirim email ke tim support kami untuk pertanyaan detail atau masalah teknis.</p>
+                        <a href="mailto:luthfianderow@gmail.com" class="card-link">luthfianderow@gmail.com<i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon" style="background: rgba(108, 92, 231, 0.15); color: var(--primary-light);">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Live Chat</h3>
+                        <p>Gunakan fitur live chat di dashboard untuk bantuan real-time dari tim kami.</p>
+                        <a href="#" class="card-link">Buka Dashboard <i class="fas fa-arrow-right"></i></a>
+                    </div>
+            </section>
+        </div>
+
+        <footer class="doc-footer">
+            <p>© 2026 TopUpKu. All rights reserved. Luthzz dev</p>
+            <div class="footer-links">
+                <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="#"><i class="fab fa-discord"></i> Discord</a>
+                <a href="#"><i class="fas fa-file-alt"></i> Changelog</a>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+            document.querySelector('.sidebar-overlay').classList.toggle('open');
+        }
+        function toggleFaq(item) {
+            const isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+            if (!isOpen) item.classList.add('open');
+        }
+        function filterNav() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.style.display = link.textContent.toLowerCase().includes(query) ? 'flex' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>

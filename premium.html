@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopUpKu — Aplikasi Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="mobile-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+    <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+            <div><h2>TopUpKu</h2><span>Dokumentasi v3.0</span></div>
+        </div>
+        <div class="sidebar-search">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Cari dokumentasi..." id="searchInput" onkeyup="filterNav()">
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <div class="nav-section-title">Memulai</div>
+                <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Beranda</a>
+                <a href="index.html#introduction" class="nav-link"><i class="fas fa-book-open"></i> Pengenalan <span class="nav-badge hot">Populer</span></a>
+                <a href="index.html#quickstart" class="nav-link"><i class="fas fa-rocket"></i> Quick Start</a>
+            </div>
+            <div class="nav-section">
+                <div class="nav-section-title">Top Up Game</div>
+                <a href="index.html#games" class="nav-link"><i class="fas fa-gamepad"></i> Daftar Game</a>
+                <a href="index.html#topup-process" class="nav-link"><i class="fas fa-credit-card"></i> Proses Top Up</a>
+                <a href="index.html#payment-methods" class="nav-link"><i class="fas fa-wallet"></i> Metode Pembayaran</a>
+            </div>
+            <div class="nav-section">
+                <div class="nav-section-title">Aplikasi Premium</div>
+                <a href="premium.html" class="nav-link active"><i class="fas fa-crown"></i> Aplikasi Premium <span class="nav-badge new">Baru</span></a>
+                <a href="premium.html#subscription" class="nav-link"><i class="fas fa-sync-alt"></i> Langganan</a>
+            </div>
+            <div class="nav-section">
+                <div class="nav-section-title">API Reference</div>
+                <a href="api.html" class="nav-link"><i class="fas fa-key"></i> Autentikasi</a>
+                <a href="api.html#api-endpoints" class="nav-link"><i class="fas fa-plug"></i> Endpoints</a>
+                <a href="api.html#api-response" class="nav-link"><i class="fas fa-code"></i> Response Format</a>
+            </div>
+            <div class="nav-section">
+                <div class="nav-section-title">Lainnya</div>
+                <a href="support.html" class="nav-link"><i class="fas fa-question-circle"></i> FAQ</a>
+                <a href="support.html#support" class="nav-link"><i class="fas fa-headset"></i> Dukungan</a>
+            </div>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="version">
+                <span>Versi Dokumentasi</span>
+                <span class="version-badge">v3.0.0</span>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main">
+        <header class="header">
+            <div class="header-left">
+                <div class="breadcrumb">
+                    <a href="index.html">Docs</a>
+                    <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                    <span class="current">Aplikasi Premium</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <a href="#" class="header-btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#" class="header-btn btn-primary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+        </header>
+
+        <div class="content">
+            <section class="doc-section" id="premium-apps">
+                <div class="section-header">
+                    <h2><i class="fas fa-crown"></i> Aplikasi Premium</h2>
+                    <p>Langganan aplikasi premium dengan harga terjangkau</p>
+                </div>
+                <div class="game-grid">
+                    <div class="game-card">
+                        <div class="game-icon-wrapper">
+                            <img src="https://i.ibb.co.com/7JGVD46z/Spotify-icon-svg.png" alt="Spotify">
+                        </div>
+                        <h4>Spotify Premium</h4>
+                        <span class="game-category">Music Streaming</span>
+                        <span class="game-status active">Tersedia</span>
+                    </div>
+                    <div class="game-card">
+                        <div class="game-icon-wrapper">
+                            <img src="https://i.ibb.co.com/kVcxy73N/Brand-Assets-Logos-01-Wordmark.jpg" alt="Netflix">
+                        </div>
+                        <h4>Netflix</h4>
+                        <span class="game-category">Video Streaming</span>
+                        <span class="game-status active">Tersedia</span>
+                    </div>
+                    <div class="game-card">
+                        <div class="game-icon-wrapper">
+                            <img src="https://i.ibb.co.com/NgSj3pcz/Youtube-logo.png" alt="YouTube">
+                        </div>
+                        <h4>YouTube Premium</h4>
+                        <span class="game-category">Video Streaming</span>
+                        <span class="game-status active">Tersedia</span>
+                    </div>
+                    <div class="game-card">
+                        <div class="game-icon-wrapper">
+                            <img src="https://i.ibb.co.com/Q7m54LvC/images-1.jpg" alt="Canva">
+                        </div>
+                        <h4>Canva Pro</h4>
+                        <span class="game-category">Design Tool</span>
+                        <span class="game-status active">Tersedia</span>
+                    </div>
+                    <div class="game-card">
+                        <div class="game-icon-wrapper">
+                            <img src="https://i.ibb.co.com/fdz5Ktd8/Google-One-logo.png" alt="Google One">
+                        </div>
+                        <h4>Google One</h4>
+                        <span class="game-category">Cloud Storage</span>
+                        <span class="game-status active">Tersedia</span>
+                    </div>
+                    <div class="game-card">
+                        <div class="game-icon-wrapper">
+                            <img src="https://i.ibb.co.com/Disney-Hotstar-Logo.png" alt="Disney+">
+                        </div>
+                        <h4>Disney+ Hotstar</h4>
+                        <span class="game-category">Video Streaming</span>
+                        <span class="game-status active">Tersedia</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="divider"></div>
+
+            <section class="doc-section" id="subscription">
+                <div class="section-header">
+                    <h2><i class="fas fa-sync-alt"></i> Paket Langganan</h2>
+                    <p>Pilihan durasi langganan untuk aplikasi premium</p>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Paket</th>
+                                <th>Durasi</th>
+                                <th>Harga Mulai</th>
+                                <th>Hemat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Harian</strong></td>
+                                <td>1 Hari</td>
+                                <td><code>Rp 5.000</code></td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mingguan</strong></td>
+                                <td>7 Hari</td>
+                                <td><code>Rp 15.000</code></td>
+                                <td><span class="badge get">15% OFF</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Bulanan</strong></td>
+                                <td>30 Hari</td>
+                                <td><code>Rp 35.000</code></td>
+                                <td><span class="badge post">30% OFF</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tahunan</strong></td>
+                                <td>365 Hari</td>
+                                <td><code>Rp 250.000</code></td>
+                                <td><span class="badge put">50% OFF</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+
+        <footer class="doc-footer">
+            <p>© 2026 TopUpKu. All rights reserved. Luthzz dev</p>
+            <div class="footer-links">
+                <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="#"><i class="fab fa-discord"></i> Discord</a>
+                <a href="#"><i class="fas fa-file-alt"></i> Changelog</a>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+            document.querySelector('.sidebar-overlay').classList.toggle('open');
+        }
+        function filterNav() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.style.display = link.textContent.toLowerCase().includes(query) ? 'flex' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>

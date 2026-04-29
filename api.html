@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopUpKu — API Reference</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="mobile-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+    <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+            <div><h2>TopUpKu</h2><span>Dokumentasi v3.0</span></div>
+        </div>
+        <div class="sidebar-search">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Cari dokumentasi..." id="searchInput" onkeyup="filterNav()">
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <div class="nav-section-title">Memulai</div>
+                <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Beranda</a>
+                <a href="index.html#introduction" class="nav-link"><i class="fas fa-book-open"></i> Pengenalan <span class="nav-badge hot">Populer</span></a>
+                <a href="index.html#quickstart" class="nav-link"><i class="fas fa-rocket"></i> Quick Start</a>
+            </div>
+            <div class="nav-section">
+                <div class="nav-section-title">Top Up Game</div>
+                <a href="index.html#games" class="nav-link"><i class="fas fa-gamepad"></i> Daftar Game</a>
+                <a href="index.html#topup-process" class="nav-link"><i class="fas fa-credit-card"></i> Proses Top Up</a>
+                <a href="index.html#payment-methods" class="nav-link"><i class="fas fa-wallet"></i> Metode Pembayaran</a>
+            </div>
+            <div class="nav-section">
+                <div class="nav-section-title">Aplikasi Premium</div>
+                <a href="premium.html" class="nav-link"><i class="fas fa-crown"></i> Aplikasi Premium <span class="nav-badge new">Baru</span></a>
+                <a href="premium.html#subscription" class="nav-link"><i class="fas fa-sync-alt"></i> Langganan</a>
+            </div>
+            <div class="nav-section">
+                <div class="nav-section-title">API Reference</div>
+                <a href="api.html" class="nav-link active"><i class="fas fa-key"></i> Autentikasi</a>
+                <a href="api.html#api-endpoints" class="nav-link"><i class="fas fa-plug"></i> Endpoints</a>
+                <a href="api.html#api-response" class="nav-link"><i class="fas fa-code"></i> Response Format</a>
+            </div>
+            <div class="nav-section">
+                <div class="nav-section-title">Lainnya</div>
+                <a href="support.html" class="nav-link"><i class="fas fa-question-circle"></i> FAQ</a>
+                <a href="support.html#support" class="nav-link"><i class="fas fa-headset"></i> Dukungan</a>
+            </div>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="version">
+                <span>Versi Dokumentasi</span>
+                <span class="version-badge">v3.0.0</span>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main">
+        <header class="header">
+            <div class="header-left">
+                <div class="breadcrumb">
+                    <a href="index.html">Docs</a>
+                    <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                    <span class="current">API Reference</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <a href="#" class="header-btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#" class="header-btn btn-primary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+        </header>
+
+        <div class="content">
+            <section class="doc-section" id="api-auth">
+                <div class="section-header">
+                    <h2><i class="fas fa-key"></i> Autentikasi API</h2>
+                    <p>Cara mengautentikasi permintaan API Anda</p>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
+                    Semua permintaan API memerlukan autentikasi menggunakan API Key. Sertakan API Key Anda di header setiap permintaan.
+                </p>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang"><i class="fas fa-lock"></i> Header Authentication</span>
+                        <button class="code-copy" onclick="copyCode(this)"><i class="far fa-copy"></i> Copy</button>
+                    </div>
+                    <div class="code-body">
+<pre><span class="property">Authorization</span>: <span class="string">Bearer YOUR_API_KEY</span>
+<span class="property">Content-Type</span>: <span class="string">application/json</span>
+<span class="property">X-Client-Version</span>: <span class="string">3.0.0</span></pre>
+                    </div>
+                </div>
+                <div class="callout danger">
+                    <i class="fas fa-shield-alt"></i>
+                    <div class="callout-content">
+                        <h4>Keamanan API Key</h4>
+                        <p>Jangan pernah membagikan API Key Anda atau menyimpannya di kode client-side (frontend). Gunakan server-side untuk semua permintaan API.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="divider"></div>
+
+            <section class="doc-section" id="api-endpoints">
+                <div class="section-header">
+                    <h2><i class="fas fa-plug"></i> API Endpoints</h2>
+                    <p>Daftar endpoint API yang tersedia</p>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Method</th>
+                                <th>Endpoint</th>
+                                <th>Deskripsi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="badge get">GET</span></td>
+                                <td><code>/api/v3/games</code></td>
+                                <td>Daftar semua game tersedia</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge get">GET</span></td>
+                                <td><code>/api/v3/games/:slug/products</code></td>
+                                <td>Daftar produk per game</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge post">POST</span></td>
+                                <td><code>/api/v3/orders</code></td>
+                                <td>Buat order baru</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge get">GET</span></td>
+                                <td><code>/api/v3/orders/:id</code></td>
+                                <td>Cek status order</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge get">GET</span></td>
+                                <td><code>/api/v3/balance</code></td>
+                                <td>Cek saldo akun</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge post">POST</span></td>
+                                <td><code>/api/v3/premium/subscribe</code></td>
+                                <td>Langganan aplikasi premium</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge get">GET</span></td>
+                                <td><code>/api/v3/transactions</code></td>
+                                <td>Riwayat transaksi</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge put">PUT</span></td>
+                                <td><code>/api/v3/webhooks</code></td>
+                                <td>Update webhook URL</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <div class="divider"></div>
+
+            <section class="doc-section" id="api-response">
+                <div class="section-header">
+                    <h2><i class="fas fa-code"></i> Response Format</h2>
+                    <p>Format response standar dari semua endpoint API</p>
+                </div>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang"><i class="fas fa-check"></i> Success Response (200)</span>
+                        <button class="code-copy" onclick="copyCode(this)"><i class="far fa-copy"></i> Copy</button>
+                    </div>
+                    <div class="code-body">
+<pre>{
+  <span class="property">"status"</span>: <span class="string">"success"</span>,
+  <span class="property">"code"</span>: <span class="number">200</span>,
+  <span class="property">"message"</span>: <span class="string">"Order berhasil dibuat"</span>,
+  <span class="property">"data"</span>: {
+    <span class="property">"orderId"</span>: <span class="string">"TRX-20260429-XXXXXX"</span>,
+    <span class="property">"game"</span>: <span class="string">"mobile-legends"</span>,
+    <span class="property">"userId"</span>: <span class="string">"123456789"</span>,
+    <span class="property">"item"</span>: <span class="string">"86 Diamonds"</span>,
+    <span class="property">"price"</span>: <span class="number">19500</span>,
+    <span class="property">"status"</span>: <span class="string">"pending"</span>,
+    <span class="property">"paymentUrl"</span>: <span class="string">"https://pay.topupku.id/..."</span>,
+    <span class="property">"createdAt"</span>: <span class="string">"2026-04-29T10:30:00Z"</span>
+  }
+}</pre>
+                    </div>
+                </div>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang"><i class="fas fa-times"></i> Error Response (400)</span>
+                        <button class="code-copy" onclick="copyCode(this)"><i class="far fa-copy"></i> Copy</button>
+                    </div>
+                    <div class="code-body">
+<pre>{
+  <span class="property">"status"</span>: <span class="string">"error"</span>,
+  <span class="property">"code"</span>: <span class="number">400</span>,
+  <span class="property">"message"</span>: <span class="string">"User ID tidak ditemukan"</span>,
+  <span class="property">"errors"</span>: [
+    {
+      <span class="property">"field"</span>: <span class="string">"userId"</span>,
+      <span class="property">"message"</span>: <span class="string">"Format User ID tidak valid"</span>
+    }
+  ]
+}</pre>
+                    </div>
+                </div>
+                <div class="callout info">
+                    <i class="fas fa-info-circle"></i>
+                    <div class="callout-content">
+                        <h4>HTTP Status Codes</h4>
+                        <p><code>200</code> Success · <code>400</code> Bad Request · <code>401</code> Unauthorized · <code>404</code> Not Found · <code>429</code> Rate Limit · <code>500</code> Server Error</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer class="doc-footer">
+            <p>© 2026 TopUpKu. All rights reserved. Luthzz dev</p>
+            <div class="footer-links">
+                <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="#"><i class="fab fa-discord"></i> Discord</a>
+                <a href="#"><i class="fas fa-file-alt"></i> Changelog</a>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+            document.querySelector('.sidebar-overlay').classList.toggle('open');
+        }
+        function copyCode(btn) {
+            const code = btn.closest('.code-block').querySelector('pre').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                setTimeout(() => btn.innerHTML = '<i class="far fa-copy"></i> Copy', 2000);
+            });
+        }
+        function filterNav() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.style.display = link.textContent.toLowerCase().includes(query) ? 'flex' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>
